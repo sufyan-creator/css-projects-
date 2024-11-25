@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Timeline</title>
+    <link rel="stylesheet" href="bootstyle.html">
+</head>
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Timeline Container */
+.timeline-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: relative;
+    padding: 30px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #fc0606 transparent;
+}
+
+.timeline-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #fd0505, #f80303);
+    border-radius: 10px;
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    position: relative;
+    gap: 50px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #f70404, #fc0505);
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+/* Timeline Item */
+.timeline-item {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlighted Circle */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #fa0505, #fc0606);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Hide Dot for First Item */
+.timeline-item:first-child::before {
+    display: none;
+}
+
+.timeline-date {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2196f3;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.timeline-content h3 {
+    font-size: 1.7em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Smooth Animation */
+.timeline-item:hover h3 {
+    color: #00bcd4;
+}
+
+.timeline-content p {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        gap: 30px;
+    }
+
+    .timeline-item {
+        min-width: 300px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.3em;
+    }
+
+    .timeline-content p {
+        font-size: 1em;
+    }
+}
+
+</style>
+<body>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>Journey Began</h3>
+                    <p>Started learning web development <br> and explored HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">
+                    <h3>First Project</h3>
+                    <p>Completed my first major project, <br> a responsive e-commerce website.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <h3>Joined Tech Company</h3>
+                    <p>Started working as a frontend  developer
+                          <br> and improved my skills.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2023</div>
+                <div class="timeline-content">
+                    <h3>Backend Exploration</h3>
+                    <p>Learned backend technologies like <br>
+                        Node.js and Laravel to expand my expertise.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>Advanced Projects</h3>
+                    <p>Working on advanced AI-based web 
+                        <br> applications and innovative solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+        }
+        body{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        .header{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: blanchedalmond;
+            color: black;
+        }
+        .logo{
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links{
+            display:flex;
+            list-style: none;
+
+        }
+        .nav-links li{
+            margin:0 15px;
+            position: relative;
+        }
+        .nav-links a{
+            color: brown;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover{
+            background-color: blueviolet;
+        }
+        .dropdown-menu{
+display: none;
+position: absolute;
+top: 100%;
+left:0;
+background-color:aqua;
+list-style: none;
+padding: 5px 0;
+border-radius: 5px;
+box-shadow: 0px 2px 5px greenyellow;
+        }
+        .dropdown-menu li{
+            margin: 0;
+        }
+        .dropdown-menu a{
+            display:block;
+            padding:5px 15px;
+        }
+        .dropdown:hover .dropdown-menu{
+            display: block;
+        }
+        .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    background-color: #d80d0d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #a80f0f;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Website</div>
+        <nav class="navbar">
+            <ul class="nav-links">
+<li> <a href ="pr2.html" target="_blank">Home</a></li>
+<li> <a href ="pr3.html">about</a></li>
+<li class="dropdown">
+    <a href="">services<b>v</b></a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Web Development</a></li>
+         <li><a href="#">Design</a></li>
+         <li><a href="#">SEO</a></li>
+ </ul>
+</li>
+<li><a href="">contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text"placeholder="search...">
+<button type="submit">go</button>
+            </div>
+ </nav>
+</header>
+    </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations Sufyan</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Container */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Popup Box */
+.popup {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    animation: bounceIn 0.5s ease;
+    position: relative;
+}
+
+/* Popup Header */
+.popup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-header img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    animation: zoomIn 0.5s ease;
+}
+
+.popup-header h2 {
+    font-size: 2em;
+    color: #2c3e50;
+}
+
+/* Text Styling */
+.popup p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.open-btn {
+    background: #27ae60;
+    color: white;
+    font-weight: bold;
+}
+
+.open-btn:hover {
+    background: #2ecc71;
+    transform: scale(1.05);
+}
+
+.close-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.close-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Popup Container -->
+    <div class="popup-container" id="popup">
+        <div class="popup">
+            <div class="popup-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Trophy Icon">
+                <h2>Congratulations!</h2>
+            </div>
+            <p>You've achieved a significant milestone. Keep up the amazing work!</p>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- Trigger Button -->
+    <button class="open-btn" onclick="openPopup()">Celebrate!</button>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
